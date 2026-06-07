@@ -1,0 +1,226 @@
+<svg viewBox="0 0 1600 1200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Smart Room IoT - TinkerCAD Wiring Diagram</title>
+  <desc id="desc">Two horizontal breadboards with Arduino Uno centered between them, realistic component placement, and color coded wiring.</desc>
+
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.22"/>
+    </filter>
+    <filter id="wireShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="1" stdDeviation="1" flood-color="#000" flood-opacity="0.25"/>
+    </filter>
+
+    <style>
+      .title{font:700 32px Arial,sans-serif;fill:#111}
+      .subtitle{font:500 14px Arial,sans-serif;fill:#374151}
+      .label{font:700 16px Arial,sans-serif;fill:#111;paint-order:stroke;stroke:#fff;stroke-width:3px;stroke-linejoin:round}
+      .small{font:12px Arial,sans-serif;fill:#1f2937}
+      .tiny{font:10px Arial,sans-serif;fill:#4b5563}
+      .bb{fill:#fbfbfb;stroke:#adb5bd;stroke-width:2}
+      .wire{fill:none;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+      .red{stroke:#d62828}.black{stroke:#111}.yellow{stroke:#f5c518}.orange{stroke:#f97316}
+      .green{stroke:#22a447}.blue{stroke:#2563eb}.lightblue{stroke:#67c6ff}
+    </style>
+
+    <circle id="hole" cx="0" cy="0" r="2.2" fill="#c9ced6" stroke="#a9b1bc" stroke-width="0.5"/>
+
+    <pattern id="mainHoles" patternUnits="userSpaceOnUse" width="12" height="12">
+      <use href="#hole" x="6" y="6"/>
+    </pattern>
+    <pattern id="railHoles" patternUnits="userSpaceOnUse" width="12" height="12">
+      <use href="#hole" x="6" y="6"/>
+    </pattern>
+  </defs>
+
+  <rect x="0" y="0" width="1600" height="1200" fill="#f5f7fa"/>
+  <text x="800" y="42" text-anchor="middle" class="title">Smart Room IoT - TinkerCAD Wiring Diagram</text>
+
+  <g id="top-breadboard" filter="url(#shadow)">
+    <rect x="120" y="70" width="1360" height="280" rx="12" class="bb"/>
+    <rect x="422" y="92" width="756" height="24" fill="#ffd7d7"/>
+    <rect x="422" y="120" width="756" height="24" fill="#d9e8ff"/>
+    <rect x="422" y="276" width="756" height="24" fill="#ffd7d7"/>
+    <rect x="422" y="304" width="756" height="24" fill="#d9e8ff"/>
+
+    <!-- Main matrix: 63 columns × 10 rows -->
+    <rect x="422" y="150" width="756" height="120" fill="url(#mainHoles)" opacity="0.88"/>
+    <!-- Power rails: 63 columns × 2 rows on each side -->
+    <rect x="422" y="92" width="756" height="52" fill="url(#railHoles)" opacity="0.88"/>
+    <rect x="422" y="276" width="756" height="52" fill="url(#railHoles)" opacity="0.88"/>
+
+    <text x="430" y="109" class="tiny" fill="#cc0000">+</text><text x="430" y="137" class="tiny" fill="#0b5ed7">-</text>
+    <text x="430" y="293" class="tiny" fill="#cc0000">+</text><text x="430" y="321" class="tiny" fill="#0b5ed7">-</text>
+
+    <g class="tiny">
+      <text x="408" y="164">a</text><text x="408" y="176">b</text><text x="408" y="188">c</text><text x="408" y="200">d</text><text x="408" y="212">e</text>
+      <text x="408" y="224">f</text><text x="408" y="236">g</text><text x="408" y="248">h</text><text x="408" y="260">i</text><text x="408" y="272">j</text>
+    </g>
+    <g class="tiny">
+      <text x="482" y="344">5</text><text x="542" y="344">10</text><text x="602" y="344">15</text><text x="662" y="344">20</text><text x="722" y="344">25</text>
+      <text x="782" y="344">30</text><text x="842" y="344">35</text><text x="902" y="344">40</text><text x="962" y="344">45</text><text x="1022" y="344">50</text>
+      <text x="1082" y="344">55</text><text x="1142" y="344">60</text>
+    </g>
+
+    <g id="dht22" transform="translate(450 162)" filter="url(#shadow)">
+      <rect x="0" y="0" width="110" height="88" rx="6" fill="#f6f0e6" stroke="#8b7e6a"/>
+      <g stroke="#d2c6b1">
+        <line x1="12" y1="12" x2="98" y2="12"/><line x1="12" y1="24" x2="98" y2="24"/><line x1="12" y1="36" x2="98" y2="36"/><line x1="12" y1="48" x2="98" y2="48"/>
+      </g>
+      <line x1="22" y1="88" x2="22" y2="108" stroke="#777"/><line x1="42" y1="88" x2="42" y2="108" stroke="#777"/><line x1="62" y1="88" x2="62" y2="108" stroke="#777"/><line x1="82" y1="88" x2="82" y2="108" stroke="#777"/>
+      <text x="55" y="125" text-anchor="middle" class="small">DHT22 (Sensor)</text>
+    </g>
+
+    <g id="ldr-circuit" transform="translate(680 178)">
+      <circle cx="0" cy="0" r="23" fill="#f8df8f" stroke="#9a6f2b" stroke-width="2"/>
+      <path d="M-10 -12 C-2 -8 2 -2 -2 4 C-5 9 2 12 8 16" fill="none" stroke="#8c5a18" stroke-width="2"/>
+      <line x1="-10" y1="23" x2="-10" y2="52" stroke="#777"/><line x1="10" y1="23" x2="10" y2="52" stroke="#777"/>
+      <g transform="translate(44 24)">
+        <rect x="0" y="0" width="84" height="12" rx="6" fill="#d2b48c" stroke="#7c5c3f"/>
+        <rect x="14" y="0" width="6" height="12" fill="#d32f2f"/><rect x="28" y="0" width="6" height="12" fill="#d32f2f"/><rect x="42" y="0" width="6" height="12" fill="#6d4c41"/><rect x="56" y="0" width="6" height="12" fill="#d4af37"/>
+      </g>
+      <text x="40" y="82" class="small">LDR (Light Sensor)</text>
+      <text x="84" y="108" class="small">10kΩ</text>
+    </g>
+
+    <g id="hc-sr04" transform="translate(930 160)" filter="url(#shadow)">
+      <rect x="0" y="0" width="220" height="96" rx="8" fill="#2f89c9" stroke="#1f5f8d"/>
+      <circle cx="65" cy="48" r="28" fill="#cfd8dc" stroke="#8c9aa3" stroke-width="3"/><circle cx="155" cy="48" r="28" fill="#cfd8dc" stroke="#8c9aa3" stroke-width="3"/>
+      <circle cx="65" cy="48" r="12" fill="#a8b4ba"/><circle cx="155" cy="48" r="12" fill="#a8b4ba"/>
+      <line x1="38" y1="96" x2="38" y2="113" stroke="#444"/><line x1="74" y1="96" x2="74" y2="113" stroke="#444"/>
+      <line x1="110" y1="96" x2="110" y2="113" stroke="#444"/><line x1="146" y1="96" x2="146" y2="113" stroke="#444"/>
+      <text x="110" y="126" text-anchor="middle" class="small">HC-SR04 (Ultrasonic Sensor)</text>
+    </g>
+
+    <g id="hc05" transform="translate(780 160)" filter="url(#shadow)">
+      <rect x="0" y="0" width="150" height="74" rx="6" fill="#3b82f6" stroke="#1d4ed8"/>
+      <rect x="10" y="10" width="72" height="22" rx="4" fill="#0f172a"/>
+      <text x="75" y="48" text-anchor="middle" class="small" fill="#fff">HC-05</text>
+      <text x="75" y="94" text-anchor="middle" class="tiny">Bluetooth</text>
+    </g>
+  </g>
+
+  <g id="arduino-uno" transform="translate(590 410)" filter="url(#shadow)">
+    <rect x="0" y="0" width="420" height="220" rx="16" fill="#006699" stroke="#004a6e" stroke-width="3"/>
+    <rect x="-34" y="86" width="34" height="50" rx="5" fill="#d1d5db" stroke="#6b7280"/>
+    <circle cx="424" cy="56" r="16" fill="#111"/>
+    <rect x="20" y="26" width="130" height="28" rx="6" fill="#0b3f57"/>
+    <text x="210" y="116" text-anchor="middle" class="label" fill="#dff7ff">ARDUINO UNO</text>
+
+    <g class="tiny" fill="#fff">
+      <text x="24" y="178">D0</text><text x="48" y="178">D1</text><text x="72" y="178">D2</text><text x="96" y="178">D3</text><text x="120" y="178">D4</text><text x="144" y="178">D5</text>
+      <text x="168" y="178">D6</text><text x="192" y="178">D7</text><text x="216" y="178">D8</text><text x="240" y="178">D9</text><text x="264" y="178">D10</text><text x="294" y="178">D11</text>
+      <text x="324" y="178">D12</text><text x="354" y="178">D13</text>
+    </g>
+    <g fill="#1f2937">
+      <rect x="20" y="186" width="360" height="12" fill="#101418"/>
+      <g fill="#d1d5db">
+        <rect x="22" y="188" width="8" height="8"/><rect x="46" y="188" width="8" height="8"/><rect x="70" y="188" width="8" height="8"/><rect x="94" y="188" width="8" height="8"/>
+        <rect x="118" y="188" width="8" height="8"/><rect x="142" y="188" width="8" height="8"/><rect x="166" y="188" width="8" height="8"/><rect x="190" y="188" width="8" height="8"/>
+        <rect x="214" y="188" width="8" height="8"/><rect x="238" y="188" width="8" height="8"/><rect x="262" y="188" width="8" height="8"/><rect x="286" y="188" width="8" height="8"/>
+        <rect x="310" y="188" width="8" height="8"/><rect x="334" y="188" width="8" height="8"/>
+      </g>
+    </g>
+
+    <g class="tiny" fill="#fff">
+      <text x="308" y="26">A0</text><text x="332" y="26">A1</text><text x="356" y="26">A2</text><text x="380" y="26">A3</text><text x="404" y="26">A4</text><text x="404" y="42">A5</text>
+      <text x="176" y="26">5V</text><text x="200" y="26">GND</text>
+    </g>
+  </g>
+
+  <g id="bottom-breadboard" filter="url(#shadow)">
+    <rect x="120" y="670" width="1360" height="280" rx="12" class="bb"/>
+    <rect x="422" y="692" width="756" height="24" fill="#ffd7d7"/>
+    <rect x="422" y="720" width="756" height="24" fill="#d9e8ff"/>
+    <rect x="422" y="876" width="756" height="24" fill="#ffd7d7"/>
+    <rect x="422" y="904" width="756" height="24" fill="#d9e8ff"/>
+
+    <rect x="422" y="750" width="756" height="120" fill="url(#mainHoles)" opacity="0.88"/>
+    <rect x="422" y="692" width="756" height="52" fill="url(#railHoles)" opacity="0.88"/>
+    <rect x="422" y="876" width="756" height="52" fill="url(#railHoles)" opacity="0.88"/>
+
+    <text x="430" y="709" class="tiny" fill="#cc0000">+</text><text x="430" y="737" class="tiny" fill="#0b5ed7">-</text>
+    <text x="430" y="893" class="tiny" fill="#cc0000">+</text><text x="430" y="921" class="tiny" fill="#0b5ed7">-</text>
+
+    <g id="lcd1602" transform="translate(430 760)" filter="url(#shadow)">
+      <rect x="0" y="0" width="310" height="130" rx="10" fill="#1f9d55" stroke="#11673a" stroke-width="2"/>
+      <rect x="46" y="26" width="220" height="64" rx="6" fill="#b7d65c" stroke="#5a6b2d"/>
+      <rect x="16" y="8" width="40" height="14" fill="#0f172a"/><rect x="66" y="8" width="40" height="14" fill="#0f172a"/><rect x="116" y="8" width="40" height="14" fill="#0f172a"/><rect x="166" y="8" width="40" height="14" fill="#0f172a"/>
+      <text x="156" y="60" text-anchor="middle" class="small">LCD1602 with I2C Backpack</text>
+    </g>
+
+    <g id="led-circuit" transform="translate(760 794)">
+      <line x1="0" y1="30" x2="44" y2="30" stroke="#777" stroke-width="2"/>
+      <rect x="44" y="24" width="90" height="12" rx="6" fill="#d2b48c" stroke="#7c5c3f"/>
+      <rect x="56" y="24" width="6" height="12" fill="#d32f2f"/><rect x="70" y="24" width="6" height="12" fill="#d32f2f"/><rect x="84" y="24" width="6" height="12" fill="#6d4c41"/><rect x="98" y="24" width="6" height="12" fill="#d4af37"/>
+      <line x1="134" y1="30" x2="174" y2="30" stroke="#777" stroke-width="2"/>
+      <circle cx="194" cy="30" r="15" fill="#ff5964" stroke="#8b1d22" stroke-width="2"/>
+      <line x1="194" y1="45" x2="194" y2="66" stroke="#777"/><line x1="204" y1="44" x2="204" y2="66" stroke="#777"/>
+      <text x="70" y="-2" class="small">220Ω</text>
+      <text x="170" y="-2" class="small">LED Indicator</text>
+    </g>
+
+    <g id="servo" transform="translate(980 760)" filter="url(#shadow)">
+      <rect x="0" y="0" width="170" height="120" rx="10" fill="#0f3b72" stroke="#031f3f" stroke-width="2"/>
+      <rect x="10" y="18" width="150" height="84" rx="8" fill="#1d4b86"/>
+      <line x1="85" y1="56" x2="120" y2="56" stroke="#fff" stroke-width="8"/><line x1="102" y1="38" x2="102" y2="74" stroke="#fff" stroke-width="8"/>
+      <line x1="26" y1="120" x2="26" y2="150" stroke="#d62828" stroke-width="4"/><line x1="52" y1="120" x2="52" y2="150" stroke="#5b4636" stroke-width="4"/><line x1="78" y1="120" x2="78" y2="150" stroke="#f5c518" stroke-width="4"/>
+      <text x="86" y="170" text-anchor="middle" class="small">Micro Servo</text>
+    </g>
+
+    <g id="buzzer" transform="translate(1140 804)" filter="url(#shadow)">
+      <circle cx="0" cy="0" r="50" fill="#111" stroke="#444" stroke-width="3"/>
+      <circle cx="0" cy="0" r="16" fill="#aeb4bb"/>
+      <line x1="-20" y1="50" x2="-20" y2="76" stroke="#666" stroke-width="3"/><line x1="20" y1="50" x2="20" y2="76" stroke="#666" stroke-width="3"/>
+      <text x="0" y="98" text-anchor="middle" class="small">Piezzo Buzzer</text>
+    </g>
+  </g>
+
+  <g id="wiring" filter="url(#wireShadow)">
+    <!-- Top breadboard power + sensors -->
+    <path class="wire red" d="M760 610 C700 560 560 430 430 104"/>
+    <path class="wire black" d="M790 610 C740 560 600 440 430 132"/>
+    <path class="wire red" d="M472 270 C468 220 462 170 470 142"/>
+    <path class="wire yellow" d="M492 270 C560 350 624 510 662 603"/>
+    <path class="wire black" d="M532 270 C520 240 500 180 510 132"/>
+    <path class="wire red" d="M968 273 C960 236 958 180 952 142"/>
+    <path class="wire orange" d="M1004 273 C940 340 770 520 686 603"/>
+    <path class="wire yellow" d="M1040 273 C960 350 810 520 710 603"/>
+    <path class="wire black" d="M1076 273 C1040 228 1000 176 990 132"/>
+    <path class="wire red" d="M670 230 C660 198 656 172 656 104"/>
+    <path class="wire green" d="M690 230 C720 330 810 520 892 605"/>
+    <path class="wire black" d="M770 230 C778 202 786 172 792 132"/>
+
+    <!-- Bottom breadboard power + actuators -->
+    <path class="wire red" d="M760 610 C700 664 560 700 430 704"/>
+    <path class="wire black" d="M790 610 C740 676 590 730 430 732"/>
+    <path class="wire red" d="M480 760 C450 736 438 718 430 704"/>
+    <path class="wire black" d="M520 760 C470 744 446 740 430 732"/>
+    <path class="wire blue" d="M620 760 C720 700 910 640 980 515"/>
+    <path class="wire lightblue" d="M660 760 C760 700 950 640 994 532"/>
+    <path class="wire green" d="M760 824 C740 770 738 700 734 603"/>
+    <path class="wire black" d="M964 858 C860 820 580 760 430 732"/>
+    <path class="wire red" d="M1006 910 C980 840 964 780 940 704"/>
+    <path class="wire black" d="M1032 910 C1000 850 980 790 954 732"/>
+    <path class="wire yellow" d="M1058 910 C980 820 920 730 830 603"/>
+    <path class="wire orange" d="M1120 854 C1030 780 900 700 760 603"/>
+    <path class="wire black" d="M1160 854 C1060 820 980 760 954 732"/>
+  </g>
+
+  <g id="labels">
+    <text x="150" y="82" class="label">BREADBOARD 1 (TOP)</text>
+    <text x="150" y="682" class="label">BREADBOARD 2 (BOTTOM)</text>
+    <text x="760" y="392" text-anchor="middle" class="subtitle">Arduino Uno centered between both boards</text>
+
+    <g id="legend" filter="url(#shadow)">
+      <rect x="1210" y="18" width="360" height="220" rx="10" fill="#ffffff" stroke="#9ca3af"/>
+      <text x="1390" y="45" text-anchor="middle" class="label">Legend</text>
+      <line x1="1230" y1="70" x2="1270" y2="70" class="wire red"/><text x="1280" y="74" class="small">RED: 5V Power</text>
+      <line x1="1230" y1="94" x2="1270" y2="94" class="wire black"/><text x="1280" y="98" class="small">BLACK: GND</text>
+      <line x1="1230" y1="118" x2="1270" y2="118" class="wire yellow"/><text x="1280" y="122" class="small">YELLOW: Data signals</text>
+      <line x1="1230" y1="142" x2="1270" y2="142" class="wire orange"/><text x="1280" y="146" class="small">ORANGE: Trig / Buzzer+</text>
+      <line x1="1230" y1="166" x2="1270" y2="166" class="wire green"/><text x="1280" y="170" class="small">GREEN: A0 / LED line</text>
+      <line x1="1230" y1="190" x2="1270" y2="190" class="wire blue"/><text x="1280" y="194" class="small">BLUE: I2C SDA</text>
+      <line x1="1230" y1="214" x2="1270" y2="214" class="wire lightblue"/><text x="1280" y="218" class="small">LIGHT BLUE: I2C SCL</text>
+    </g>
+  </g>
+</svg>

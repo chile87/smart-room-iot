@@ -11,12 +11,15 @@ This repository contains architecture and wiring documentation for a two-breadbo
 - **Application layer (Flask)**: visualizes historical data and sends control commands.
 
 ## Circuit diagram
-- SVG diagram: [`circuit-diagram/tinkercad-wiring-diagram.svg`](./circuit-diagram/tinkercad-wiring-diagram.svg)
-- Diagram notes and BOM: [`circuit-diagram/README.md`](./circuit-diagram/README.md)
+- Realistic SVG diagram: [`circuit-diagram/tinkercad-realistic-wiring.svg`](./circuit-diagram/tinkercad-realistic-wiring.svg)
+- Wiring documentation: [`circuit-diagram/README.md`](./circuit-diagram/README.md)
+- Pin-by-pin wiring table: [`circuit-diagram/connections-table.md`](./circuit-diagram/connections-table.md)
 - Step-by-step wiring guide: [`docs/WIRING_GUIDE.md`](./docs/WIRING_GUIDE.md)
 
+![Smart Room IoT Wiring Diagram](./circuit-diagram/tinkercad-realistic-wiring.svg)
+
 ## Getting started
-1. Open the SVG wiring diagram and verify each connection.
+1. Open the realistic SVG wiring diagram and verify each connection.
 2. Assemble hardware by following `docs/WIRING_GUIDE.md` from power rails first, then signal lines.
 3. Confirm continuity and polarity before powering the circuit.
 4. Upload Arduino firmware and validate sensor/actuator behavior incrementally.
