@@ -1,49 +1,39 @@
-# Circuit Diagram (TinkerCAD-style SVG)
+# Circuit Diagram (TinkerCAD Realistic SVG)
 
-## How to view the SVG
-- Open `circuit-diagram/tinkercad-wiring-diagram.svg` directly in any modern browser from the repository root.
-- You can also embed it in Markdown via a relative link: `./tinkercad-wiring-diagram.svg`.
-- Because the SVG uses a `viewBox`, it scales cleanly without quality loss.
+## Main diagram
+- Primary SVG: [`circuit-diagram/tinkercad-realistic-wiring.svg`](./tinkercad-realistic-wiring.svg)
+- Legacy SVG (kept for compatibility): [`circuit-diagram/tinkercad-wiring-diagram.svg`](./tinkercad-wiring-diagram.svg)
 
-## Component placement rationale
-- **Arduino Uno R3** is centered at the top to minimize long crossing signal paths.
-- **Breadboard 1 (left)** groups input and communication devices: DHT22, HC-SR04, LDR divider, HC-05.
-- **Breadboard 2 (right)** groups output/display devices: Servo, LED+220Ω, Buzzer, LCD1602 I2C.
-- This split mirrors subsystem boundaries and simplifies assembly/debugging.
+## How to view
+1. Open `circuit-diagram/tinkercad-realistic-wiring.svg` in any browser.
+2. Zoom in to inspect breadboard holes, rails, and pin-level routing.
+3. Cross-check each wire against `connections-table.md`.
 
-## Color coding used
-- **Red**: 5V / VCC distribution
+## Component placement guide
+- **Top breadboard**: DHT22 (left), LDR+10kΩ (center-left), HC-SR04 (right), HC-05 module (center-right).
+- **Center**: Arduino Uno R3.
+- **Bottom breadboard**: LCD1602 I2C (left), LED+220Ω (center-left), Micro Servo (center-right), Piezzo Buzzer (right).
+
+## Wire color legend
+- **Red**: 5V / VCC power
 - **Black**: GND return
-- **Yellow**: Data signals (DHT22 data, HC-SR04 Echo, Servo signal, LCD SCL)
-- **Orange**: HC-SR04 Trig
-- **Green**: LDR analog, LED control, Bluetooth RX
-- **Blue**: Bluetooth TX and LCD SDA (I2C/Serial class)
-- **Purple**: Buzzer signal
+- **Yellow**: DHT22 data, HC-SR04 Echo, Servo signal
+- **Orange**: HC-SR04 Trig and buzzer positive line
+- **Green**: LDR analog node (A0) and LED control path
+- **Blue**: LCD SDA (A4)
+- **Light Blue**: LCD SCL (A5)
 
-## Connection verification checklist
-- [ ] Arduino 5V connected to both breadboard positive rails
-- [ ] Arduino GND connected to both breadboard negative rails
-- [ ] DHT22: VCC/DATA/GND correctly mapped to rail+/D2/rail-
-- [ ] HC-SR04: VCC/Trig/Echo/GND mapped to rail+/D3/D4/rail-
-- [ ] LDR divider node connected to A0 with 10kΩ to GND
-- [ ] HC-05: VCC/GND/TXD/RXD mapped to rail+/rail-/D10/D11
-- [ ] Servo: Red/Brown/Yellow mapped to rail+/rail-/D9
-- [ ] LED path is D5 → 220Ω → LED anode and cathode to GND
-- [ ] Buzzer + on D6 and buzzer - on GND rail
-- [ ] LCD I2C: VCC/GND/SDA/SCL mapped to rail+/rail-/A4/A5
-- [ ] Common ground continuity confirmed for all components
+## Connection checklist
+- [ ] Top and bottom breadboards have clear + (red rail) and - (blue rail) power rails
+- [ ] Arduino 5V and GND fan out to both breadboards
+- [ ] DHT22 is wired VCC / DATA / GND to rail+ / D2 / rail-
+- [ ] LDR divider is wired to A0 with 10kΩ to ground
+- [ ] HC-SR04 is wired VCC / Trig / Echo / GND to rail+ / D3 / D4 / rail-
+- [ ] LCD1602 I2C is wired VCC / GND / SDA / SCL to rail+ / rail- / A4 / A5
+- [ ] LED is wired through 220Ω to D5 and cathode to GND
+- [ ] Servo is wired Red / Brown / Yellow to rail+ / rail- / D9
+- [ ] Buzzer + is wired to D6 and buzzer - to GND rail
 
-## Bill of Materials (BOM)
-- 1x Arduino Uno R3
-- 2x Breadboard
-- 1x DHT22 sensor
-- 1x HC-SR04 ultrasonic sensor
-- 1x LDR photoresistor
-- 1x HC-05 Bluetooth module
-- 1x SG90 servo motor
-- 1x LED (single color)
-- 1x Buzzer (active/passive)
-- 1x LCD1602 with I2C backpack
-- 1x 10kΩ resistor (LDR divider)
-- 1x 220Ω resistor (LED current limiting)
-- Assorted jumper wires
+## Notes
+- Bluetooth HC-05 is included on the top breadboard for architecture completeness.
+- The SVG uses a 1600×1200 viewBox and grouped layers (`top-breadboard`, `arduino-uno`, `bottom-breadboard`, `wiring`, `labels`) for easy editing.
