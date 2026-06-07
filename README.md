@@ -1,2 +1,22 @@
-# smart-room-iot
-Smart Room Monitoring &amp; Control System - IoT Project with Arduino, Raspberry Pi, and Flask
+# Smart Room IoT
+
+Smart Room Monitoring & Control system using Arduino Uno sensors/actuators, Raspberry Pi gateway processing, and a Flask dashboard.
+
+## Project overview
+This repository contains architecture and wiring documentation for a two-breadboard Smart Room IoT prototype. The wiring layout is designed for clear power polarity, clean signal routing, and maintainable subsystem separation.
+
+## System architecture
+- **Device layer (Arduino Uno)**: DHT22, LDR, HC-SR04 inputs + Servo, LED, Buzzer outputs + LCD1602 local display + HC-05 communication.
+- **Gateway layer (Raspberry Pi)**: receives JSON via Bluetooth/Serial and stores telemetry in SQLite.
+- **Application layer (Flask)**: visualizes historical data and sends control commands.
+
+## Circuit diagram
+- SVG diagram: [`circuit-diagram/tinkercad-wiring-diagram.svg`](./circuit-diagram/tinkercad-wiring-diagram.svg)
+- Diagram notes and BOM: [`circuit-diagram/README.md`](./circuit-diagram/README.md)
+- Step-by-step wiring guide: [`docs/WIRING_GUIDE.md`](./docs/WIRING_GUIDE.md)
+
+## Getting started
+1. Open the SVG wiring diagram and verify each connection.
+2. Assemble hardware by following `docs/WIRING_GUIDE.md` from power rails first, then signal lines.
+3. Confirm continuity and polarity before powering the circuit.
+4. Upload Arduino firmware and validate sensor/actuator behavior incrementally.
