@@ -1,7 +1,7 @@
 # Circuit Diagram (TinkerCAD-style SVG)
 
 ## How to view the SVG
-- Open `/tmp/workspace/chile87/smart-room-iot/circuit-diagram/tinkercad-wiring-diagram.svg` directly in any modern browser.
+- Open `circuit-diagram/tinkercad-wiring-diagram.svg` directly in any modern browser from the repository root.
 - You can also embed it in Markdown via a relative link: `./tinkercad-wiring-diagram.svg`.
 - Because the SVG uses a `viewBox`, it scales cleanly without quality loss.
 
